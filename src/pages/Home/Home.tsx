@@ -5,6 +5,10 @@ import Card from '../../components/Card/Card';
 import s from './Home.module.scss';
 import PaginationComp from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
+import { useAppDispatch } from '../../app/hooks';
+import { useSelector } from 'react-redux';
+import { lastSelected } from '../../reducer/character.selector';
+import { insert } from '../../reducer/characters.actions';
 
 const Home = () => {
   const [characters, setCharacters] = useState<Character[]>();
@@ -12,6 +16,8 @@ const Home = () => {
   const [info, setInfo] = useState<Info>();
   const [error, setError] = useState('');
   const { getAll, filter } = RickAndMortyService;
+  const dispatch = useAppDispatch();
+  const lastSelectedList = useSelector(lastSelected);
   useEffect(() => {
     getAll(page)
       .then((res) => {
@@ -31,6 +37,14 @@ const Home = () => {
       .catch((e) => setError(e.response.data.error));
   };
 
+  const GoToDetail = (character: Character) => {
+    const list = [...lastSelectedList];
+    if (list.length === 5) {
+      list.pop();
+    }
+    list.unshift(character);
+    dispatch(insert(list));
+  };
   return (
     <>
       <Search submit={(e) => changeName(e)}></Search>
@@ -38,6 +52,8 @@ const Home = () => {
         <div className={s.error}> {error}</div>
       ) : (
         <>
+          {lastSelectedList?.length > 0 &&
+            lastSelectedList.map((selected) => <div>{selected.name}</div>)}
           {info && (
             <div className={s.pagination}>
               <PaginationComp
@@ -53,7 +69,11 @@ const Home = () => {
             {characters &&
               characters.length > 0 &&
               characters.map((character: Character) => (
-                <Card key={character.id} character={character} />
+                <Card
+                  onClick={() => GoToDetail(character)}
+                  key={character.id}
+                  character={character}
+                />
               ))}
           </div>
         </>

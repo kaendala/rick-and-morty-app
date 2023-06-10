@@ -1,0 +1,38 @@
+@import '../../styles/global.scss';
+
+.search{
+    background-color: $green;
+    padding: 10px 20px;
+    width: 350px;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    .container{
+        background-color: $white;
+        display: flex;
+        border-radius: 8px;
+        position: relative;
+        height: 30px;
+        .input{
+            background-color: $white;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            padding: 0 77px 0 10px;
+           
+        }
+        .button{
+            position: absolute;
+            right: 0;
+            align-items: center;
+            background-color: $black;
+            border: 1px solid $white;
+            border-radius:8px;
+            color: $white;
+            display: flex;
+            font-size: 16px;
+            height: 30px;
+            padding: 8px;
+        }
+    }
+}
