@@ -1,0 +1,18 @@
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin:  0 auto;
+    gap: 23px;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+.error{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
