@@ -20,10 +20,14 @@ const Search = ({ submit }: SearchProps) => {
         <input
           className={s.input}
           placeholder="Search by name…"
+          data-testid="inputSearch"
           onChange={(e) => setValue(e.currentTarget.value)}
           onKeyUp={(evt) => handleKeyPress(evt)}
         />
-        <button className={s.button} onClick={() => submit(value)}>
+        <button
+          className={s.button}
+          data-testid="buttonSearch"
+          onClick={() => submit(value)}>
           Search
         </button>
       </div>

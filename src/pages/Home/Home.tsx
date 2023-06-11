@@ -26,6 +26,7 @@ const Home = () => {
 
   useEffect(() => {
     callService(1);
+    // eslint-disable-next-line
   }, []);
 
   const callService = (page: number, name?: string) => {
@@ -74,7 +75,7 @@ const Home = () => {
             </div>
           )}
 
-          <div className={s.grid}>
+          <div className={s.grid} data-testid="cardSection">
             {characters &&
               characters.length > 0 &&
               characters.map((character: Character) => (

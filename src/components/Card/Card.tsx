@@ -9,6 +9,7 @@ type CardProps = {
 const Card = ({ character, onClick }: CardProps) => {
   return (
     <div
+      data-testid={character.name + character.id}
       className={s.card}
       key={character.id}
       onClick={() => onClick && onClick()}>

@@ -6,7 +6,7 @@ const Header = () => {
       <img
         className={s.imageHeader}
         src="/images/header.png"
-        alt="rick and morty"
+        alt="rick and morty header"
       />
       <img
         className={s.image}
