@@ -1,7 +1,7 @@
 @import '../../styles/global.scss';
 
 .lastSelected{
-    background-color: $yellow;
+    background-color: rgba($yellow, 0.6);
     padding-bottom: 20px;
     margin-top: 20px;
     .title{

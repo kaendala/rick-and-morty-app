@@ -1,7 +1,10 @@
 @import 'styles/global.scss';
 @import 'styles/normalize.scss';
+
 .app{
     width: 100%;
     min-height: 100vh;
-    background-color: $dark-blue;
+    background: $dark-blue url('../public/images/RAM_Blue.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
