@@ -3,18 +3,21 @@ import s from './Card.module.scss';
 
 type CardProps = {
   character: Character;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Card = ({ character, onClick }: CardProps) => {
   return (
-    <div className={s.card} key={character.id} onClick={() => onClick()}>
+    <div
+      className={s.card}
+      key={character.id}
+      onClick={() => onClick && onClick()}>
       <div className={s.title}>
         <p>{character.name}</p>
       </div>
       <img className={s.image} src={character.image} alt="character" />
       <div className={s.info}>
-        {character.name && (
+        {character.status && (
           <p>
             <span>Status:</span>
             <span> {character.status}</span>

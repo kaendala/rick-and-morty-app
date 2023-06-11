@@ -5,12 +5,14 @@ type PaginationProps = {
   defaultPageSize: number;
   showSizeChanger: boolean;
   change: (e: number) => void;
+  current: number;
 };
 const PaginationComp = ({
   total,
   defaultPageSize,
   showSizeChanger,
   change,
+  current,
 }: PaginationProps) => {
   return (
     <ConfigProvider
@@ -22,6 +24,7 @@ const PaginationComp = ({
         defaultPageSize={defaultPageSize}
         showSizeChanger={showSizeChanger}
         onChange={change}
+        current={current}
       />
     </ConfigProvider>
   );

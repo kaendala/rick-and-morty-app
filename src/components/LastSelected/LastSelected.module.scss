@@ -1,0 +1,20 @@
+@import '../../styles/global.scss';
+
+.lastSelected{
+    background-color: $yellow;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    .title{
+        color: $dark-blue;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 60px;
+    }
+    .contentList{
+        display: flex;
+        gap: 0 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
